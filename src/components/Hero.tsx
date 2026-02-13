@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail, ArrowRight, Download } from 'lucide-react';
 import { AnimatedButton } from './AnimatedButton';
+import profileImage from './images/profilepic.png';
 
 const jobTitles = [
   'Full Stack Developer',
@@ -162,10 +163,10 @@ export function Hero() {
               {/* Profile Image */}
               <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-800">
                 <img
-                  src="https://images.unsplash.com/photo-1653732212701-b729f0b08330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDF8fHx8MTc3MDk2ODMwMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Profile"
-                  className="w-full h-full object-cover"
-                />
+  src={profileImage}
+  alt="Profile"
+  className="w-full h-full object-cover"
+/>
               </div>
 
               {/* Decorative Dots */}
