@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, ArrowRight, Download, Facebook } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight, Download, Facebook } from 'lucide-react';
 import { AnimatedButton } from './AnimatedButton';
-import profileImage from './images/profilepic.jpeg';
+// ඔබේ 'profileImage' භාවිතා කරන ආකාරය මෙහිදී වෙනස් වේ.
+import profileImage from './images/propic.jpg'; // අලුතින් සාදන ලද 3D ආචරණය සහිත පින්තූරය (save කරගත් පසු)
 
 const jobTitles = [
   'Aspiring Software Engineer',
@@ -20,6 +21,7 @@ export function Hero() {
   // Typing Effect
   useEffect(() => {
     const currentTitle = jobTitles[titleIndex];
+
     const handleTyping = () => {
       if (!isDeleting && displayedText.length < currentTitle.length) {
         setDisplayedText(currentTitle.slice(0, displayedText.length + 1));
@@ -41,7 +43,11 @@ export function Hero() {
     { Icon: Github, href: 'https://github.com/KmAC171', label: 'GitHub' },
     { Icon: Linkedin, href: 'https://www.linkedin.com/in/charith-kulathunga-18959a367', label: 'LinkedIn' },
     { Icon: Facebook, href: 'https://www.facebook.com/charith.kulasekara.35', label: 'Facebook' },
-    { Icon: Mail, href: '#', label: 'Email' },
+    {
+      Icon: Mail,
+      href: 'mailto:charith.kulathunga@email.com?subject=Hire%20Me&body=Hi Charith, I visited your portfolio...',
+      label: 'Email'
+    },
   ];
 
   return (
@@ -51,37 +57,23 @@ export function Hero() {
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Side */}
+
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8 }}
           >
-            <motion.p
-              className="text-cyan-400 mb-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
+            <motion.p className="text-cyan-400 mb-2">
               Hello, I'm
             </motion.p>
 
-            <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-4 text-white"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
+            <motion.h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
               Charith Kulathunga
             </motion.h1>
 
             <div className="h-12 mb-6">
-              <motion.h2
-                className="text-2xl md:text-3xl text-slate-300"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
+              <motion.h2 className="text-2xl md:text-3xl text-slate-300">
                 {displayedText}
                 <motion.span
                   className="inline-block w-0.5 h-8 bg-cyan-400 ml-1"
@@ -91,109 +83,91 @@ export function Hero() {
               </motion.h2>
             </div>
 
-            <motion.p
-              className="text-slate-400 mb-8 max-w-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
+            <motion.p className="text-slate-400 mb-8 max-w-lg">
               Passionate about creating beautiful, functional, and user-centered
               digital experiences. Let's build something amazing together.
             </motion.p>
 
-            {/* Social Icons */}
-            <motion.div
-              className="flex space-x-4 mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-            >
+            {/* SOCIAL ICONS */}
+            <div className="flex space-x-4 mb-8">
               {socialIcons.map(({ Icon, href, label }, index) => (
                 <motion.a
                   key={label}
                   href={href}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-all duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-all"
                   whileHover={{
                     scale: 1.2,
                     boxShadow: '0 0 20px rgba(34, 211, 238, 0.5)',
                   }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.001 + index * 0.1 }}
+                  transition={{ delay: index * 0.1 }}
                 >
                   <Icon size={20} />
                 </motion.a>
               ))}
-            </motion.div>
+            </div>
 
-            {/* CTA Buttons */}
-            <motion.div
-              className="flex flex-wrap gap-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-            >
-              <AnimatedButton variant="primary" onClick={() => {}} icon={Download}>
+            {/* BUTTONS */}
+            <div className="flex flex-wrap gap-4">
+              <AnimatedButton variant="primary" icon={Download}>
                 Download CV
               </AnimatedButton>
 
               <AnimatedButton
                 variant="secondary"
                 onClick={() => {
-                  const element = document.querySelector('#contact');
-                  element?.scrollIntoView({ behavior: 'smooth' });
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 icon={ArrowRight}
               >
                 Get In Touch
               </AnimatedButton>
+            </div>
+          </motion.div>
+
+          {/* RIGHT SIDE - 3D IMAGE */}
+          <motion.div
+            className="flex justify-center items-center perspective-[1000px]"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              // Original size but with rounded card effect
+              className="relative w-[300px] h-[300px] md:w-[368px] md:h-[380px] rounded-3xl"
+              whileHover={{
+                // Enhanced 3D tilt interaction
+                rotateY: 20,
+                rotateX: -10,
+                scale: 1.02
+              }}
+              animate={{
+                // Gentle floating animation
+                y: [0, -15, 0]
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              {/* ADVANCED 3D GLOW/SHADOW */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-500 blur-3xl opacity-50 transform-gpu rotate-[-10deg]"></div>
+
+              {/* IMAGE CONTAINER */}
+              <div className="relative w-full h-full rounded-3xl overflow-hidden bg-slate-800 border-2 border-slate-700/50 shadow-2xl">
+                <img
+                  src={profileImage}
+                  alt="Charith Kulathunga 3D Profile"
+                  className="w-full h-full object-cover transform-gpu scale-105"
+                />
+              </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Side - Profile Image */}
-          <motion.div
-            className="flex justify-center items-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="relative w-90 h-90 md:w-96 md:h-96 rounded-full">
-              {/* Glowing Animated Background */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-sky-400 to-blue-400 animate-pulse"></div>
-
-              {/* Profile Image */}
-              <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-800">
-                <img
-  src={profileImage}
-  alt="Profile"
-  className="w-full h-full object-cover"
-/>
-              </div>
-
-              {/* Decorative Dots */}
-              {[...Array(3)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-3 h-3 rounded-full bg-cyan-400"
-                  style={{
-                    top: `${20 + i * 30}%`,
-                    right: `-${10 + i * 5}%`,
-                  }}
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.3,
-                  }}
-                />
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
