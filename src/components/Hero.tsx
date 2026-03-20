@@ -38,7 +38,7 @@ export function Hero() {
   }, [displayedText, isDeleting, titleIndex]);
 
   const socialIcons = [
-    { Icon: Github, href: '#', label: 'GitHub' },
+    { Icon: Github, href: 'https://github.com/KmAC171', label: 'GitHub' },
     { Icon: Linkedin, href: '#', label: 'LinkedIn' },
     { Icon: Twitter, href: '#', label: 'Twitter' },
     { Icon: Mail, href: '#', label: 'Email' },
