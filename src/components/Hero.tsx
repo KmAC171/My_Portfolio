@@ -45,7 +45,7 @@ export function Hero() {
     { Icon: Facebook, href: 'https://www.facebook.com/charith.kulasekara.35', label: 'Facebook' },
     {
       Icon: Mail,
-      href: 'mailto:charith.kulathunga@email.com?subject=Hire%20Me&body=Hi Charith, I visited your portfolio...',
+      href: 'mailto:charithkulathunga1@gmail.com?subject=Hire%20Me&body=Hi Charith, I visited your portfolio...',
       label: 'Email'
     },
   ];
