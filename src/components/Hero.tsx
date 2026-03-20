@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail, ArrowRight, Download } from 'lucide-react';
 import { AnimatedButton } from './AnimatedButton';
-import profileImage from './images/profilepic.png';
+import profileImage from './images/profilepic.jpeg';
 
 const jobTitles = [
   'Full Stack Developer',
