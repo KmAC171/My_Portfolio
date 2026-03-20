@@ -62,9 +62,9 @@ export function About() {
             </h3>
             
             <p className="text-[#CBD5E1] mb-4 leading-relaxed">
-              I'm a passionate developer with over 5 years of experience in building 
-              web applications that solve real-world problems. I specialize in creating 
-              seamless user experiences with modern technologies.
+              Final-year Computer Science undergraduate at the University of Ruhuna
+with strong interest in Software Engineering Intern or Backend / Full Stack
+Software Engineering Intern roles. 
             </p>
 
             <motion.div
@@ -77,6 +77,15 @@ export function About() {
               className="overflow-hidden"
             >
               <p className="text-[#94A3B8] mb-4 leading-relaxed">
+Hands-on experience in building AI
+powered applications, full-stack systems, and backend services using
+Java, Spring Boot, FastAPI, React, and RESTful APIs. A proactive and
+motivated undergraduate with strong problem-solving and collaboration
+skills, seeking an internship to apply technical knowledge in real-world
+projects and gain industry-level experience.</p>
+
+              <p className="text-[#94A3B8] mb-4 leading-relaxed">
+
                 My journey in tech started with a curiosity about how things work. 
                 Today, I combine creativity with technical expertise to build products 
                 that not only look great but perform exceptionally. I believe in 
@@ -106,9 +115,12 @@ export function About() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-8">
               {[
-                { value: '5+', label: 'Years Experience' },
-                { value: '100+', label: 'Projects Done' },
-                { value: '50+', label: 'Happy Clients' },
+                { value: '10+', label: 'Projects Done' },
+                { value: '08+', label: 'Certifications' },
+                { value: '400+', label: 'GitHub Commits' },
+                { value: '10+', label: 'Tools' },
+                { value: '500+', label: 'Learning Hours' },
+                { value: '10+', label: 'Courses Completed' }
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
