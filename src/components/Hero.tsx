@@ -5,6 +5,7 @@ import { AnimatedButton } from './AnimatedButton';
 import profileImage from './images/profilepic.jpeg';
 
 const jobTitles = [
+  'Aspiring Software Engineer',
   'Full Stack Developer',
   'UI/UX Designer',
   'Creative Developer',
@@ -156,7 +157,7 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full">
+            <div className="relative w-90 h-90 md:w-96 md:h-96 rounded-full">
               {/* Glowing Animated Background */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-sky-400 to-blue-400 animate-pulse"></div>
 
