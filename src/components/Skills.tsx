@@ -18,8 +18,12 @@ const skills = [
   { icon: Cloud, name: 'Cloud', techs: ['AWS', 'Azure', 'Vercel'] },
   { icon: GitBranch, name: 'Version Control', techs: ['Git', 'GitHub', 'GitLab'] },
   { icon: Layers, name: 'Architecture', techs: ['Microservices', 'REST', 'GraphQL'] },
-  { icon: Cpu, name: 'AI/ML', techs: ['TensorFlow', 'PyTorch', 'OpenAI'] },
+  { icon: Cpu, name: 'DevOps', techs: ['Docker', 'Kubernetes', 'Jenkins'] },
   { icon: Shield, name: 'Security', techs: ['OAuth', 'JWT', 'Encryption'] },
+  { icon: Shield, name: 'Databases', techs: ['MySQL', 'PostgreSQL', 'MongoDB'] },
+  { icon: Shield, name: 'Testing', techs: ['Jest', 'Mocha', 'Selenium'] },
+  { icon: Shield, name: 'Mobile', techs: ['React Native', 'Flutter', 'Swift'] },
+  { icon: Shield, name: 'Project Management', techs: ['Agile', 'Scrum', 'Jira'] },
 ];
 
 export function Skills() {

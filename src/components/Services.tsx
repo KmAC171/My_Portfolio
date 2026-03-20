@@ -1,6 +1,7 @@
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Code, Palette, Smartphone, Zap, Database, Globe } from 'lucide-react';
+import { Code, Palette, Smartphone, Zap, Database, Globe, FileText } from 'lucide-react';
+
 
 const services = [
   {
@@ -20,8 +21,8 @@ const services = [
   },
   {
     icon: Zap,
-    title: 'Performance Optimization',
-    description: 'Optimizing applications for speed, efficiency, and scalability to handle growing demands.',
+    title: 'Problem Solving & Logic',
+    description: 'Implementing efficient algorithms and solving complex logic problems using Python or Java.',
   },
   {
     icon: Database,
@@ -29,9 +30,9 @@ const services = [
     description: 'Building robust server-side solutions with secure APIs and efficient database management.',
   },
   {
-    icon: Globe,
-    title: 'SEO & Marketing',
-    description: 'Implementing SEO strategies and digital marketing to increase visibility and reach.',
+    icon: FileText,
+    title: 'Technical Documentation',
+    description: 'Writing clear technical guides, documentation, and system analysis reports.',
   },
 ];
 
