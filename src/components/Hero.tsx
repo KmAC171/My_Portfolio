@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, ArrowRight, Download } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, ArrowRight, Download, Facebook } from 'lucide-react';
 import { AnimatedButton } from './AnimatedButton';
 import profileImage from './images/profilepic.jpeg';
 
@@ -39,8 +39,8 @@ export function Hero() {
 
   const socialIcons = [
     { Icon: Github, href: 'https://github.com/KmAC171', label: 'GitHub' },
-    { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { Icon: Twitter, href: '#', label: 'Twitter' },
+    { Icon: Linkedin, href: 'https://www.linkedin.com/in/charith-kulathunga-18959a367', label: 'LinkedIn' },
+    { Icon: Facebook, href: 'https://www.facebook.com/charith.kulasekara.35', label: 'Facebook' },
     { Icon: Mail, href: '#', label: 'Email' },
   ];
 
@@ -112,6 +112,8 @@ export function Hero() {
                 <motion.a
                   key={label}
                   href={href}
+                   target="_blank"
+                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-all duration-300"
                   whileHover={{
                     scale: 1.2,
@@ -119,7 +121,7 @@ export function Hero() {
                   }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
+                  transition={{ delay: 0.001 + index * 0.1 }}
                 >
                   <Icon size={20} />
                 </motion.a>
