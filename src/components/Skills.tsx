@@ -116,7 +116,7 @@ export function Skills() {
       initial={{ opacity: 0.7 }} // x: -10 ain kara
       animate={{
         opacity: hoveredIndex === index ? 1 : 0.7,
-        x: 0, // Meka 0 thiyanna
+        x: 0, 
       }}
       transition={{ delay: techIndex * 0.1 }}
       className="text-center text-sm text-[#94A3B8]"
