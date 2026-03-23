@@ -45,20 +45,20 @@ export function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex@example.com',
-      href: 'mailto:alex@example.com',
+      value: 'charithkulathunga1@gmail.com',
+      href: 'mailto:charithkulathunga1@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+94 75 558 5594',
+      href: 'tel:+94755585594',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
-      href: '#',
+      value: 'Kandy, Sri Lanka',
+      href: 'https://maps.app.goo.gl/tz1QKwZPoeTYEeKh6',
     },
   ];
 

@@ -15,7 +15,7 @@ const skills = [
   { icon: Code2, name: 'Frontend', techs: ['React', 'TypeScript', 'Tailwind'] },
   { icon: Database, name: 'Backend', techs: ['JavaScript', 'Python', 'Java'] },
   { icon: Palette, name: 'Design', techs: ['Figma', 'Adobe XD', 'Photoshop'] },
-  { icon: Cloud, name: 'Cloud', techs: ['AWS', 'Azure', 'Vercel'] },
+  { icon: Cloud, name: 'Cloud', techs: ['AWS', '', 'Vercel'] },
   { icon: GitBranch, name: 'Version Control', techs: ['Git', 'GitHub', 'GitLab'] },
   { icon: Layers, name: 'Architecture', techs: ['Microservices', 'REST', 'GraphQL'] },
   { icon: Cpu, name: 'DevOps', techs: ['Docker', 'Kubernetes', 'Jenkins'] },
