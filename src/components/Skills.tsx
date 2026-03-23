@@ -13,7 +13,7 @@ import {
 
 const skills = [
   { icon: Code2, name: 'Frontend', techs: ['React', 'TypeScript', 'Tailwind'] },
-  { icon: Database, name: 'Backend', techs: ['Node.js', 'Python', 'PostgreSQL'] },
+  { icon: Database, name: 'Backend', techs: ['JavaScript', 'Python', 'Java'] },
   { icon: Palette, name: 'Design', techs: ['Figma', 'Adobe XD', 'Photoshop'] },
   { icon: Cloud, name: 'Cloud', techs: ['AWS', 'Azure', 'Vercel'] },
   { icon: GitBranch, name: 'Version Control', techs: ['Git', 'GitHub', 'GitLab'] },
@@ -109,22 +109,22 @@ export function Skills() {
                 </h3>
 
                 {/* Technologies */}
-                <div className="relative z-10 space-y-1">
-                  {skill.techs.map((tech, techIndex) => (
-                    <motion.div
-                      key={tech}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{
-                        opacity: hoveredIndex === index ? 1 : 0.7,
-                        x: hoveredIndex === index ? 0 : -10,
-                      }}
-                      transition={{ delay: techIndex * 0.1 }}
-                      className="text-center text-sm text-[#94A3B8]"
-                    >
-                      {tech}
-                    </motion.div>
-                  ))}
-                </div>
+<div className="relative z-10 space-y-1">
+  {skill.techs.map((tech, techIndex) => (
+    <motion.div
+      key={tech}
+      initial={{ opacity: 0.7 }} // x: -10 ain kara
+      animate={{
+        opacity: hoveredIndex === index ? 1 : 0.7,
+        x: 0, // Meka 0 thiyanna
+      }}
+      transition={{ delay: techIndex * 0.1 }}
+      className="text-center text-sm text-[#94A3B8]"
+    >
+      {tech}
+    </motion.div>
+  ))}
+</div>
 
                 {/* Progress indicator (appears on hover) */}
                 <motion.div
