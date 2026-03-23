@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { AnimatedButton } from './AnimatedButton';
 
+
 export function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
