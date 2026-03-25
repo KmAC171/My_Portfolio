@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowRight, Download, Facebook } from 'lucide-react';
 import { AnimatedButton } from './AnimatedButton';
 // ඔබේ 'profileImage' භාවිතා කරන ආකාරය මෙහිදී වෙනස් වේ.
-import profileImage from './images/propic.jpg'; // අලුතින් සාදන ලද 3D ආචරණය සහිත පින්තූරය (save කරගත් පසු)
+import profileImage from './images/propic.jpg';
 
 const jobTitles = [
   'Aspiring Software Engineer',
