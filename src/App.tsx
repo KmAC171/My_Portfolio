@@ -8,6 +8,7 @@ import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
+import Certificates from './components/Cert';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,6 +30,7 @@ export default function App() {
       <Services />
       <Skills />
       <Projects />
+      <Certificates />
       <Contact />
       <Footer />
       <BackToTop />
