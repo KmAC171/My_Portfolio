@@ -12,6 +12,7 @@ const menuItems = [
   { label: 'Services', href: '#services' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Certificates', href: '#certificates' },
   { label: 'Contact', href: '#contact' },
 ];
 
