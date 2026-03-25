@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowRight, Download, Facebook } from 'lucide-react';
 import { AnimatedButton } from './AnimatedButton';
-// ඔබේ 'profileImage' භාවිතා කරන ආකාරය මෙහිදී වෙනස් වේ.
+
 import profileImage from './images/propic.jpg';
+import cvFile from './assets/SC12887.pdf';
 
 const jobTitles = [
   'Aspiring Software Engineer',
