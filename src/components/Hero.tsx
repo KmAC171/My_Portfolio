@@ -113,9 +113,11 @@ export function Hero() {
 
             {/* BUTTONS */}
             <div className="flex flex-wrap gap-4">
-              <AnimatedButton variant="primary" icon={Download}>
-                Download CV
-              </AnimatedButton>
+              <a href={cvFile} download>
+  <AnimatedButton variant="primary" icon={Download}>
+    Download CV
+  </AnimatedButton>
+</a>
 
               <AnimatedButton
                 variant="secondary"
