@@ -114,7 +114,7 @@ export function Footer() {
             >
               <Heart className="text-[#22D3EE]" size={16} fill="currentColor" />
             </motion.span>
-            <span>by Alex Johnson © 2026. All rights reserved.</span>
+            <span>© 2026. All rights reserved.</span>
           </p>
         </div>
       </div>

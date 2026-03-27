@@ -59,7 +59,7 @@ export default function Cert() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="py-20 px-6 bg-[#0F172A]" ref={ref}>
+    <section id="certificates" className="py-20 px-6 bg-[#0F172A]" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -68,11 +68,11 @@ export default function Cert() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] bg-clip-text text-transparent">Projects</span>
+            Featured <span className="bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] bg-clip-text text-transparent">Certificates</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] mx-auto rounded-full" />
           <p className="text-[#94A3B8] mt-6 max-w-2xl mx-auto">
-            A collection of projects that showcase my skills and creativity
+            A collection of certificates that showcase my skills and achievements
           </p>
         </motion.div>
 
