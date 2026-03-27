@@ -22,7 +22,7 @@ const skills = [
   { icon: Shield, name: 'Security', techs: ['OAuth', 'JWT', 'Encryption'] },
   { icon: Shield, name: 'Databases', techs: ['MySQL', 'PostgreSQL', 'MongoDB'] },
   { icon: Shield, name: 'Testing', techs: ['Jest', 'Mocha', 'Selenium'] },
-  { icon: Shield, name: 'Mobile', techs: ['React Native', 'Flutter', 'Swift'] },
+  { icon: Shield, name: 'Mobile', techs: ['React Native'] },
   { icon: Shield, name: 'Project Management', techs: ['Agile', 'Scrum', 'Jira'] },
 ];
 
