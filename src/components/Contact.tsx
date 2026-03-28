@@ -3,7 +3,6 @@ import { useRef, useState } from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { AnimatedButton } from './AnimatedButton';
 
-
 export function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -27,8 +26,6 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate
     const newErrors: { [key: string]: boolean } = {};
     if (!formData.name) newErrors.name = true;
     if (!formData.email) newErrors.email = true;
@@ -38,34 +35,20 @@ export function Contact() {
       setErrors(newErrors);
       return;
     }
-
     console.log('Form submitted:', formData);
   };
 
   const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'charithkulathunga1@gmail.com',
-      href: 'mailto:charithkulathunga1@gmail.com',
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+94 75 558 5594',
-      href: 'tel:+94755585594',
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'Kandy, Sri Lanka',
-      href: 'https://maps.app.goo.gl/tz1QKwZPoeTYEeKh6',
-    },
+    { icon: Mail, label: 'Email', value: 'charithkulathunga1@gmail.com', href: 'mailto:charithkulathunga1@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+94 75 558 5594', href: 'tel:+94755585594' },
+    { icon: MapPin, label: 'Location', value: 'Kandy, Sri Lanka', href: 'https://www.google.com/maps/place/Madawala/@7.3229673,80.6812188,3a,75y,148.26h,89.59t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDa1eSylwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAFfmt2Z2HDLLEcQOf8gqnSONAhML8n-PkWrSoWD5ygmAB4Risn8JzKlL-wWKHfh7SED7NFPbuUQib2jas2MwOIJ2ISIs-_A-9rEHI2bnGHwSK7b83VchDg7FBZNv_hbM5SQ4EywGbpO_Gw%3Dw900-h600-k-no-pi0.4099999999999966-ya44.312436828613286-ro0-fo100!7i7680!8i3840!4m7!3m6!1s0x3ae3679cee8b8987:0xffca88af57ffdc7c!8m2!3d7.3275593!4d80.6743053!10e5!16s%2Fm%2F02rt_pq?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D' },
   ];
 
   return (
     <section id="contact" className="py-20 px-6 bg-[#111827]" ref={ref}>
       <div className="max-w-7xl mx-auto">
+        
+        {/* Title Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -73,201 +56,104 @@ export function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] bg-clip-text text-transparent">Touch</span>
+            Get In <span className="text-[#22D3EE]">Touch</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] mx-auto rounded-full" />
-          <p className="text-[#94A3B8] mt-6 max-w-2xl mx-auto">
-            Have a project in mind? Let's work together to create something amazing
-          </p>
+          <div className="w-24 h-1 bg-[#22D3EE] mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
+        {/* Grid Container - items-stretch භාවිතයෙන් දෙපැත්තම එකම උසකට ගන්නවා */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          
+          {/* Left Side: Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            className="flex flex-col justify-between h-full"
           >
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <p className="text-[#94A3B8] mb-8">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-[#F8FAFC]">Contact Information</h3>
+              <p className="text-[#94A3B8] leading-relaxed max-w-md">
                 Feel free to reach out through any of these channels. I'm always 
                 open to discussing new projects, creative ideas, or opportunities.
               </p>
             </div>
 
-            {contactInfo.map((info, index) => (
-              <motion.a
-                key={info.label}
-                href={info.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                whileHover={{ x: 10 }}
-                className="flex items-center space-x-4 p-4 rounded-xl bg-[#0F172A] border border-[#1F2937] hover:border-[#22D3EE]/50 transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#22D3EE] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <info.icon className="text-[#0F172A]" size={20} />
-                </div>
-                <div>
-                  <div className="text-sm text-[#94A3B8]">{info.label}</div>
-                  <div className="font-medium text-[#F8FAFC] group-hover:text-[#22D3EE] transition-colors duration-300">
-                    {info.value}
+            {/* මේ කොටස flex-1 දමා ඇති නිසා ඉතිරි ඉඩ ප්‍රමාණය පුරවනවා */}
+            <div className="flex flex-col justify-center gap-6 mt-8 md:mt-0 flex-1">
+              {contactInfo.map((info, index) => (
+                <motion.a
+                  key={info.label}
+                  href={info.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  whileHover={{ x: 8 }}
+                  className="flex items-center space-x-4 p-5 rounded-xl bg-[#0F172A] border border-[#1F2937] hover:border-[#22D3EE]/40 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#22D3EE] flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                    <info.icon className="text-[#0F172A]" size={20} />
                   </div>
-                </div>
-              </motion.a>
-            ))}
-
-            {/* Decorative element */}
-            <motion.div
-              className="relative h-64 rounded-2xl overflow-hidden mt-8"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.8 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#22D3EE]/20 to-[#06B6D4]/20 backdrop-blur-sm" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl font-bold bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] bg-clip-text text-transparent mb-2">
-                    24/7
+                  <div className="min-w-0">
+                    <div className="text-sm text-[#94A3B8]">{info.label}</div>
+                    <div className="font-medium text-[#F8FAFC] group-hover:text-[#22D3EE] transition-colors truncate">
+                      {info.value}
+                    </div>
                   </div>
-                  <div className="text-[#CBD5E1]">Available for projects</div>
-                </div>
-              </div>
-            </motion.div>
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Right Side: Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-[#0F172A] p-8 lg:p-10 rounded-2xl border border-[#1F2937] h-full"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name Input */}
-              <div className="relative">
-                <motion.label
-                  className={`absolute left-4 transition-all duration-300 pointer-events-none ${
-                    focusedField === 'name' || formData.name
-                      ? 'top-2 text-xs text-[#22D3EE]'
-                      : 'top-4 text-base text-[#94A3B8]'
-                  }`}
-                  animate={{
-                    y: focusedField === 'name' || formData.name ? -8 : 0,
-                    scale: focusedField === 'name' || formData.name ? 0.85 : 1,
-                  }}
-                >
-                  Your Name
-                </motion.label>
-                <motion.input
+            <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
+              <div className="space-y-6 flex-1">
+                <input
                   type="text"
                   name="name"
+                  placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField('name')}
-                  onBlur={() => setFocusedField(null)}
-                  className={`w-full px-4 pt-6 pb-2 bg-[#0F172A] border-2 rounded-lg outline-none transition-all duration-300 ${
-                    errors.name
-                      ? 'border-red-500'
-                      : focusedField === 'name'
-                      ? 'border-[#22D3EE] shadow-[0_0_20px_rgba(34,211,238,0.3)]'
-                      : 'border-[#1F2937]'
+                  className={`w-full px-4 py-4 bg-[#111827] border-2 rounded-lg outline-none transition-all ${
+                    errors.name ? 'border-red-500' : 'border-[#1F2937] focus:border-[#22D3EE]'
                   }`}
-                  animate={
-                    errors.name
-                      ? { x: [-10, 10, -10, 10, 0] }
-                      : {}
-                  }
-                  transition={{ duration: 0.4 }}
                 />
-              </div>
 
-              {/* Email Input */}
-              <div className="relative">
-                <motion.label
-                  className={`absolute left-4 transition-all duration-300 pointer-events-none ${
-                    focusedField === 'email' || formData.email
-                      ? 'top-2 text-xs text-[#22D3EE]'
-                      : 'top-4 text-base text-[#94A3B8]'
-                  }`}
-                  animate={{
-                    y: focusedField === 'email' || formData.email ? -8 : 0,
-                    scale: focusedField === 'email' || formData.email ? 0.85 : 1,
-                  }}
-                >
-                  Your Email
-                </motion.label>
-                <motion.input
+                <input
                   type="email"
                   name="email"
+                  placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField('email')}
-                  onBlur={() => setFocusedField(null)}
-                  className={`w-full px-4 pt-6 pb-2 bg-[#0F172A] border-2 rounded-lg outline-none transition-all duration-300 ${
-                    errors.email
-                      ? 'border-red-500'
-                      : focusedField === 'email'
-                      ? 'border-[#22D3EE] shadow-[0_0_20px_rgba(34,211,238,0.3)]'
-                      : 'border-[#1F2937]'
+                  className={`w-full px-4 py-4 bg-[#111827] border-2 rounded-lg outline-none transition-all ${
+                    errors.email ? 'border-red-500' : 'border-[#1F2937] focus:border-[#22D3EE]'
                   }`}
-                  animate={
-                    errors.email
-                      ? { x: [-10, 10, -10, 10, 0] }
-                      : {}
-                  }
-                  transition={{ duration: 0.4 }}
                 />
-              </div>
 
-              {/* Message Input */}
-              <div className="relative">
-                <motion.label
-                  className={`absolute left-4 transition-all duration-300 pointer-events-none ${
-                    focusedField === 'message' || formData.message
-                      ? 'top-2 text-xs text-[#22D3EE]'
-                      : 'top-4 text-base text-[#94A3B8]'
-                  }`}
-                  animate={{
-                    y: focusedField === 'message' || formData.message ? -8 : 0,
-                    scale: focusedField === 'message' || formData.message ? 0.85 : 1,
-                  }}
-                >
-                  Your Message
-                </motion.label>
-                <motion.textarea
+                <textarea
                   name="message"
+                  placeholder="Your Message"
                   value={formData.message}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField('message')}
-                  onBlur={() => setFocusedField(null)}
-                  rows={5}
-                  className={`w-full px-4 pt-6 pb-2 bg-[#0F172A] border-2 rounded-lg outline-none resize-none transition-all duration-300 ${
-                    errors.message
-                      ? 'border-red-500'
-                      : focusedField === 'message'
-                      ? 'border-[#22D3EE] shadow-[0_0_20px_rgba(34,211,238,0.3)]'
-                      : 'border-[#1F2937]'
+                  rows={6}
+                  className={`w-full px-4 py-4 bg-[#111827] border-2 rounded-lg outline-none resize-none transition-all ${
+                    errors.message ? 'border-red-500' : 'border-[#1F2937] focus:border-[#22D3EE]'
                   }`}
-                  animate={
-                    errors.message
-                      ? { x: [-10, 10, -10, 10, 0] }
-                      : {}
-                  }
-                  transition={{ duration: 0.4 }}
                 />
               </div>
 
-              <AnimatedButton
-                variant="primary"
-                onClick={() => {}}
-                type="submit"
-              >
+              <AnimatedButton variant="primary" type="submit" className="w-full justify-center py-4 mt-6">
                 Send Message
               </AnimatedButton>
             </form>
           </motion.div>
+
         </div>
       </div>
     </section>
