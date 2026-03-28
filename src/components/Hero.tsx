@@ -56,7 +56,7 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center px-6 pt-20 bg-[#0F172A]"
     >
-      <div className="max-w-[1440px] mx-auto w-full">
+      <div className="max-w-7xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
           {/* LEFT SIDE */}
