@@ -172,7 +172,7 @@ export function Footer() {
             >
               <Heart className="text-[#22D3EE]" size={16} fill="currentColor" />
             </motion.span>
-            <span>by KmACd © {new Date().getFullYear()}. All rights reserved.</span>
+            <span>by KmAC © {new Date().getFullYear()}. All rights reserved.</span>
           </p>
         </div>
       </div>
