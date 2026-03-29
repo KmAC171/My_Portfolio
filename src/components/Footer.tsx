@@ -41,15 +41,15 @@ export function Footer() {
 
       if (res.ok) {
         setStatus('success');
-        setMessage("ස්තූතියි! ඔයා සාර්ථකව සම්බන්ධ වුණා.");
+        setMessage("Thank you! You have successfully connected.");
         setEmail('');
       } else {
         setStatus('error');
-        setMessage(data.error || "අසාර්ථකයි! පසුව උත්සාහ කරන්න.");
+        setMessage(data.error || "Failed! Try again later.");
       }
     } catch (err) {
       setStatus('error');
-      setMessage("Error එකක් සිදු වුණා. පසුව උත්සාහ කරන්න.");
+      setMessage("An error occurred. Please try again later.");
     }
   };
 
