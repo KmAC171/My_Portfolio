@@ -1,10 +1,11 @@
 import { motion, useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import portfolioImage from './images/portfolio.png';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
+    title: 'CoreHive Saas HR Platform',
     description: 'A full-stack e-commerce solution with real-time inventory management and payment processing.',
     image: 'https://images.unsplash.com/photo-1700887937204-69f8b8400ace?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRpZ2l0YWwlMjBkZXNpZ24lMjBwcm9qZWN0fGVufDF8fHx8MTc3MDk3OTE5Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     tags: ['React', 'Node.js', 'PostgreSQL'],
@@ -12,7 +13,7 @@ const projects = [
     githubUrl: '#',
   },
   {
-    title: 'Social Media Dashboard',
+    title: 'Pharmacy Management System',
     description: 'Analytics dashboard for tracking social media metrics across multiple platforms.',
     image: 'https://images.unsplash.com/photo-1605108222700-0d605d9ebafe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudCUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzA5MTkwNTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     tags: ['Vue.js', 'Express', 'MongoDB'],
@@ -20,7 +21,7 @@ const projects = [
     githubUrl: '#',
   },
   {
-    title: 'AI Content Generator',
+    title: 'Beach Tourism and Activity Management System',
     description: 'Machine learning powered tool for generating creative content and copy.',
     image: 'https://images.unsplash.com/photo-1753998941587-5befe71f4572?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwdGVjaG5vbG9neSUyMGNvZGluZ3xlbnwxfHx8fDE3NzA5NzkxOTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     tags: ['Python', 'TensorFlow', 'React'],
@@ -28,7 +29,7 @@ const projects = [
     githubUrl: '#',
   },
   {
-    title: 'Project Management Tool',
+    title: 'Hotel Booking System',
     description: 'Collaborative workspace for teams with task tracking and real-time updates.',
     image: 'https://images.unsplash.com/photo-1759884247173-3db27f7fafef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NzA5NTAyMjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     tags: ['Next.js', 'Prisma', 'WebSocket'],
@@ -44,10 +45,10 @@ const projects = [
     githubUrl: '#',
   },
   {
-    title: 'Real Estate Platform',
-    description: 'Property listing and management system with virtual tour capabilities.',
-    image: 'https://images.unsplash.com/photo-1753998941587-5befe71f4572?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwdGVjaG5vbG9neSUyMGNvZGluZ3xlbnwxfHx8fDE3NzA5NzkxOTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tags: ['Angular', 'Django', 'PostgreSQL'],
+    title: 'My Portfolio Website',
+    description: 'A sleek, responsive portfolio built to showcase creative projects. It integrates a functional newsletter system via Mailchimp and Vercel Serverless Functions.',
+    image: portfolioImage,
+    tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'],
     liveUrl: '#',
     githubUrl: '#',
   },
