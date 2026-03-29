@@ -1,3 +1,5 @@
+// api/subscribe.js
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -12,8 +14,6 @@ export default async function handler(req, res) {
   try {
     const API_KEY = process.env.MAILCHIMP_API_KEY;
     const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
-    
-    // API Key එකේ අන්තිම කැබැල්ලෙන් datacenter එක ගන්නවා (උදා: us21)
     const DATACENTER = API_KEY.split('-')[1];
 
     const response = await fetch(
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       {
         method: 'POST',
         headers: {
-          Authorization: `apikey ${API_KEY}`,
+          'Authorization': `apikey ${API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -33,9 +33,11 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    if (response.status >= 400) {
-      return res.status(400).json({ 
-        error: data.title === "Member Exists" ? "Already Subscribed!" : "Something went wrong" 
+    if (!response.ok) {
+      // මෙතන තමයි ඇත්තම ලෙඩේ අහුවෙන්නේ
+      console.error("Mailchimp Error:", data);
+      return res.status(response.status).json({ 
+        error: data.title === "Member Exists" ? "Already Subscribed!" : (data.detail || "Error") 
       });
     }
 
